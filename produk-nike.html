@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NIKE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- React & Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-4" href="#">NIKE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="UAS PRAKTIKUM.HTML">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="produk-nike.html">Produk</a></li>
+            <li class="nav-item"><a class="nav-link" href="profil-nike.html">ABOUT ME</a></li>
+            <li class="nav-item"><a class="nav-link" href="kontak-1.html">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Running Text -->
+    <div class="bg-warning text-center py-2">
+      <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+        WELCOME TO NIKE STORE !!
+      </marquee>
+    </div>
+
+    <!-- React Container -->
+    <div id="root" class="container my-4"></div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-4">
+      &copy; 2025 - 24.240.0038 Rayyan Ridhwan Awud Aziz
+    </footer>
+
+    <!-- React JSX -->
+    <script type="text/babel">
+      function ProductCard({ image, title, subtitle, description, link }) {
+        return (
+          <div className="col-md-6 mb-4">
+            <div className="card h-100 shadow">
+              <img src={image} className="card-img-top" alt={title} />
+              <div className="card-body">
+                <h4 className="card-title">{title}</h4>
+                <h6 className="card-subtitle mb-2 text-muted">{subtitle}</h6>
+                <p className="card-text">{description}</p>
+                <a href={link} className="btn btn-warning">SHOP</a>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function ProdukNike() {
+        return (
+          <div className="row">
+            <ProductCard
+              image="nike-streakfly-2.jpg"
+              title="KENAPA SEPATU NIKE MENJADI PILIHAN UTAMA"
+              subtitle="KUALITAS DAN TEKNOLOGI SEPATU NIKE"
+              description="Sepatu Nike dikenal luas karena kualitas premium dan inovasi teknologinya seperti Zoom Air, Flyknit, dan React Foam yang memberikan kenyamanan dan performa terbaik."
+              link="daftar-produk-sepatu.html"
+            />
+            <ProductCard
+              image="JERSEY BASKET 1.JPG"
+              title="KENAPA JERSEY NIKE UNGGUL DI KELASNYA"
+              subtitle="KUALITAS BAHAN & TEKNOLOGI TERDEPAN"
+              description="Jersey Nike menggunakan teknologi Dri-FIT untuk menyerap keringat, dengan bahan ringan dan desain ergonomis untuk performa dan tampilan optimal."
+              link="daftar-produk-jersey.html"
+            />
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<ProdukNike />);
+    </script>
+
+    <!-- Bootstrap JS (untuk navbar responsive) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

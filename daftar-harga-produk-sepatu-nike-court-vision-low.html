@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIKE COURT VISION LOW</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- React CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- Optional Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .produk-img {
+      max-width: 300px;
+    }
+    .btn-size {
+      min-width: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">NIKE</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="UAS PRAKTIKUM.HTML">HOME</a></li>
+          <li class="nav-item"><a class="nav-link active" href="daftar-produk-sepatu.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="profil-nike.html">ABOUT ME</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak-1.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Running Text -->
+  <div class="bg-warning text-center py-2">
+    <marquee behavior="scroll" scrollamount="3" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+      WELCOME TO NIKE STORE !!
+    </marquee>
+  </div>
+
+  <!-- React root -->
+  <div class="container my-5" id="root"></div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    &copy; 2025 - 24.240.0038 Rayyan Ridhwan Awud Aziz
+  </footer>
+
+  <!-- React Script -->
+  <script type="text/babel">
+    function Produk() {
+      const ukuran = [39, 40, 41, 42, 43, 44];
+
+      return (
+        <div className="bg-white p-4 rounded shadow text-center">
+          <img src="nike-court-vision-low.jpg" alt="Nike Court Vision Low" className="img-fluid produk-img mb-4 rounded" />
+
+          <h2 className="fw-bold">NIKE COURT VISION LOW</h2>
+          <p className="text-muted">Men's Shoes</p>
+          <p>Sepatu kasual dengan desain klasik dari Nike Court Vision Low, cocok untuk gaya sporty sehari-hari.</p>
+          <h4 className="text-danger fw-semibold">Rp 1.069.000</h4>
+
+          <p className="fw-bold mt-4">Pilih Warna:</p>
+          <div className="d-flex justify-content-center gap-2 mb-3">
+            <img src="nike-court-vision-low.jpg" width="60" height="60" className="border rounded" />
+          </div>
+
+          <p className="fw-bold">Pilih Ukuran:</p>
+          <div className="d-flex justify-content-center gap-2 flex-wrap mb-4">
+            {ukuran.map((size) => (
+              <button className="btn btn-outline-secondary btn-size" key={size}>{size}</button>
+            ))}
+          </div>
+
+          <a href="data-pengiriman.html" className="btn btn-primary px-4">Beli Sekarang</a>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<Produk />);
+  </script>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIKE</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- React & ReactDOM CDN -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
+  <!-- Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <!-- Layout -->
+  <div class="container-fluid p-3 bg-dark text-white">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="h3">NIKE</div>
+      <nav>
+        <a href="UAS PRAKTIKUM.HTML" class="btn btn-outline-light me-2">HOME</a>
+        <a href="produk-nike.html" class="btn btn-outline-light me-2">Produk</a>
+        <a href="profil-nike.html" class="btn btn-outline-light me-2">ABOUT ME</a>
+        <a href="kontak-1.html" class="btn btn-outline-light">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Running Text -->
+  <div class="bg-warning py-1 text-center">
+    <marquee behavior="scroll" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();" direction="left">
+      WELCOME TO NIKE STORE !!
+    </marquee>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="text-center my-5">
+    <img src="iklan-1.jpg" class="img-fluid" alt="Iklan Nike" />
+    <h2 class="mt-4">Langkahkan Kemenanganmu</h2>
+    <p>Temukan koleksi terbaru sepatu Nike untuk performa terbaikmu.</p>
+    <a href="produk-nike.html" class="btn btn-primary">Belanja Sekarang</a>
+  </section>
+
+  <!-- Produk React Section -->
+  <section class="container my-5">
+    <h2 class="text-center mb-4">Produk Unggulan</h2>
+    <div id="produk-root"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    &copy; 2025 - 24.240.0038 Rayyan Ridhwan Awud Aziz
+  </footer>
+
+  <!-- React JSX Script -->
+  <script type="text/babel">
+    const products = [
+      { title: "NIKE STREAKFLY 2", img: "nike-streakfly-2.jpg" },
+      { title: "NIKE AIR FORCE 1", img: "AIR FORCE 1'07 PUTIH.JPG" },
+      { title: "NIKE DUNK LOW SE", img: "NIKE DUNK LOW SE.jpg" },
+      { title: "PEGASUS PLUS", img: "PEGASUS PLUS.jpg" }
+    ];
+
+    function ProductList() {
+      return (
+        <div className="row">
+          {products.map((p, index) => (
+            <div className="col-md-3 mb-4" key={index}>
+              <div className="card h-100 shadow-sm">
+                <img src={p.img} className="card-img-top" alt={p.title} />
+                <div className="card-body text-center">
+                  <h5 className="card-title">{p.title}</h5>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('produk-root'));
+    root.render(<ProductList />);
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>

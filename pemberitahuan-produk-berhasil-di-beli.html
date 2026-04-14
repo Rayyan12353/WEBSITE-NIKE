@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NIKE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- React & Babel CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-4" href="#">NIKE</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="UAS PRAKTIKUM.HTML">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="produk-nike.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="profil-nike.html">ABOUT ME</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak-1.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Running Text -->
+  <div class="bg-warning text-center py-2">
+    <marquee scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+      WELCOME TO NIKE STORE !!
+    </marquee>
+  </div>
+
+  <!-- Info Pembelian -->
+  <div class="container my-4">
+    <h2 class="text-success text-center">PEMBELIAN BERHASIL</h2>
+  </div>
+
+  <!-- React Root -->
+  <div id="root" class="container my-4"></div>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3 mt-4">
+    &copy; 2025 - 24.240.0038 Rayyan Ridhwan Awud Aziz
+  </footer>
+
+  <!-- Optional React Component -->
+  <script type="text/babel">
+    function SuccessMessage() {
+      return (
+        <div className="alert alert-success text-center" role="alert">
+          Terima kasih telah berbelanja di NIKE Store!
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<SuccessMessage />);
+  </script>
+
+  <!-- Bootstrap JS (untuk menu responsif) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

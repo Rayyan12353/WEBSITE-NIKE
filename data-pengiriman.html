@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>NIKE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- CSS Eksternal (jika ada) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- React & Babel CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">NIKE</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="UAS PRAKTIKUM.HTML">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="produk-nike.html">Produk</a></li>
+          <li class="nav-item"><a class="nav-link" href="profil-nike.html">ABOUT ME</a></li>
+          <li class="nav-item"><a class="nav-link" href="kontak-1.html">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Running Text -->
+  <div class="bg-warning text-center py-2">
+    <marquee behavior="scroll" scrollamount="3" onmouseover="this.stop();" onmouseout="this.start();">
+      WELCOME TO NIKE STORE !!
+    </marquee>
+  </div>
+
+  <!-- Form Pembelian -->
+  <div class="container my-5">
+    <h3 class="mb-4">Data Pembelian</h3>
+    <form>
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama:</label>
+        <input type="text" class="form-control" id="nama" name="nama">
+      </div>
+      <div class="mb-3">
+        <label for="alamat" class="form-label">Alamat:</label>
+        <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="pembayaran" class="form-label">Metode Pembayaran:</label>
+        <select class="form-select" id="pembayaran" name="pembayaran">
+          <option>Transfer Bank</option>
+          <option>COD</option>
+          <option>E-Wallet</option>
+        </select>
+      </div>
+      <a href="pemberitahuan-produk-berhasil-di-beli.html" class="btn btn-primary">Kirim Pesanan</a>
+    </form>
+  </div>
+
+  <!-- React Root (opsional) -->
+  <div id="root" class="container"></div>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3">
+    &copy; 2025 - 24.240.0038 Rayyan Ridhwan Awud Aziz
+  </footer>
+
+  <!-- React JSX (opsional) -->
+  <script type="text/babel">
+    function InfoPembayaran() {
+      return (
+        <div className="alert alert-info mt-4 text-center">
+          Pastikan metode pembayaran sudah dipilih dengan benar!
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<InfoPembayaran />);
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
